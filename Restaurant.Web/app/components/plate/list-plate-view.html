@@ -1,0 +1,107 @@
+﻿<div ng-include="'app/components/shared/partial-views/headbar.html'"> </div>
+
+<div class="col-md-12 text-center">
+    <div class="row">
+        <h4>
+            <strong>
+                <u> PRATOS </u>
+            </strong>
+        </h4>
+    </div>
+</div>
+
+<div class="col-md-12 margin-top-40">
+    <div class="row">
+        <div class="container">
+            <fieldset>
+                <legend> Filtros </legend>
+
+                <div class="col-md-1 text-center">
+                    <i class="fa fa-search fa-2x search" aria-hidden="true"></i>
+                </div>
+
+                <div class="col-md-6">
+                    <form name="searchForm" novalidate>
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control text-center"
+                                   ng-model="filterSearchedName"
+                                   placeholder="Pesquise pelo nome do prato" />
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-5 container-cadastrar">
+                    <div class="pull-right">
+                        <a href="#/prato/cadastro-prato/0/0" class="btn btn-success">
+                            <i class="fa fa-plus" aria-hidden="true"></i> &nbsp; CADASTRAR NOVO PRATO
+                        </a>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="container container-plate" ng-if="vm.listPlate.length > 0">
+
+            <table class="table table-striped">
+
+                <thead>
+                    <tr>
+                        <td class="text-center">
+                            <span class="title-grid">
+                                <strong> REMOVER </strong>
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            <span class="title-grid">
+                                <strong> EDITAR </strong>
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            <span class="title-grid">
+                                <strong> RESTAURANTES </strong>
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            <span class="title-grid">
+                                <strong> PRATOS </strong>
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            <span class="title-grid">
+                                <strong> PREÇO </strong>
+                            </span>
+                        </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="text-center" ng-repeat="plate in vm.listPlate | filter: { plateName:filterSearchedName }">
+                        <td class="text-center col-md-1">
+                            <button type="button" class="btn btn-group btn-danger btn-md" ng-click="vm.removePlate(plate.plateId, plate.restaurantId)">
+                                <i class="fa fa-trash"> </i>
+                            </button>
+                        </td>
+                        <td class="text-center col-md-1">
+                            <div class="button-group">
+                                <a href="#/prato/cadastro-prato/{{ plate.plateId }}/{{ plate.restaurantId }}" class="btn btn-group btn-default btn-md"><i class="fa fa-edit"></i></a>
+                            </div>
+                        </td>
+                        <td class="text-center col-md-3" ng-model="restaurantName"> {{ plate.restaurantName}} </td>
+                        <td class="text-center col-md-5" ng-model="plateName"> {{ plate.plateName}} </td>
+                        <td class="text-center col-md-3" ng-model="price"> R$ {{ plate.price}} </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+<div ng-include="'app/components/shared/partial-views/footer.html'"> </div>

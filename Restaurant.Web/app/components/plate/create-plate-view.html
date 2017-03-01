@@ -1,0 +1,146 @@
+﻿<div ng-include="'app/components/shared/partial-views/headbar.html'"> </div>
+
+<div class="col-md-12 text-center">
+    <div class="row">
+        <h4>
+            <strong>
+                <u> CADASTRO DE PRATOS </u>
+            </strong>
+        </h4>
+    </div>
+</div>
+
+<div class="col-md-12 margin-top-40">
+    <div class="row">
+        <div class="container">
+            <fieldset>
+                <legend> Dados </legend>
+
+                <div class="row">
+
+                    <form name="dataForm" novalidate>
+
+                        <div class="form-group" ng-class="{ 'has-error' : dataForm.plateName.$invalid && dataForm.plateName.$dirty }">
+
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <label>
+                                        <strong> Selecione o Restaurante: </strong>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <select ng-model="vm.restaurantId" class="form-control" required
+                                                ng-options="r.restaurantId as r.restaurantName for r in vm.listRestaurantSelect">    
+                                            <!--<option ng-model="vm.plate.restaurantName" value="{{ restaurant.restaurantId }}" ng-repeat="restaurant in  vm.listRestaurantSelect"> {{ restaurant.restaurantName }} </option>-->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 container-alert-error">
+                                <div class="col-md-12">
+                                    <div ng-messages="dataForm.plateName.$error" ng-if="dataForm.plateName.$dirty" class="alert-error" role="alert">
+                                        <div ng-message="required"> Favor selecionar um restaurante. </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{ 'has-error' : dataForm.plateName.$invalid && dataForm.plateName.$dirty }">
+
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <label>
+                                        <strong> Nome do Prato: </strong>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input ng-model="vm.plate.plateName"
+                                               type="text"
+                                               class="form-control"
+                                               id="plateName"
+                                               name="plateName"
+                                               placeholder="Nome do Prato"
+                                               ng-maxlength="40"
+                                               required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 container-alert-error">
+                                <div class="col-md-12">
+                                    <div ng-messages="dataForm.plateName.$error" ng-if="dataForm.plateName.$dirty" class="alert-error" role="alert">
+                                        <div ng-message="required"> Favor preencher o campo Nome do Prato. </div>
+                                        <div ng-message="maxlength"> Máximo de 80 caracteres. </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group" ng-class="{ 'has-error' : dataForm.price.$invalid && dataForm.price.$dirty }">
+
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <label>
+                                        <strong> R$ - Preço do Prato: </strong>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input ng-model="vm.plate.price"
+                                               type="text"
+                                               class="form-control"
+                                               id="price"
+                                               name="price"
+                                               placeholder="R$ - Preço do Prato"
+                                               required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 container-alert-error">
+                                <div class="col-md-12">
+                                    <div ng-messages="dataForm.price.$error" ng-if="dataForm.price.$dirty" class="alert-error" role="alert">
+                                        <div ng-message="required"> Favor preencher o campo  Preço do Prato. </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <a class="btn btn-danger" ng-click="vm.cancel()">
+                                        <i class="fa fa-plus" aria-hidden="true"></i> &nbsp; CANCELAR
+                                    </a>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <a class="btn btn-success" ng-click="vm.createOrEditPlate()" ng-disabled="dataForm.$invalid || !dataForm.$dirty">
+                                        <i class="fa fa-plus" aria-hidden="true"></i> &nbsp; SALVAR
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<div ng-include="'app/components/shared/partial-views/footer.html'"> </div>

@@ -1,0 +1,121 @@
+﻿/* #############  GLOBAL  ############# */
+
+::-webkit-scrollbar {
+width: 13px; 
+height: 7px;
+}
+
+::-webkit-scrollbar-track-piece {
+background: #ffffff; 
+}
+
+::-webkit-scrollbar-thumb:vertical {
+height: 15px;
+width: 15px; 
+background-color: #cac8c8; 
+border-radius: 15px; 
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+width: 8px; 
+background-color:  #cac8c8; 
+}
+
+.white{
+    color: #ffffff;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.margin-top-10{
+    margin-top: 10px;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.margin-top-30{
+    margin-top: 30px;
+}
+
+.margin-top-40{
+    margin-top: 40px;
+}
+
+.margin-bottom-30{
+    margin-bottom: 30px;
+}
+
+.font-size-12 {
+    font-size: 12pt;
+}
+
+.text-align-justify{
+    text-align: justify;
+}
+
+.hover-text-decoration-none:hover{
+    text-decoration: none;
+}
+
+.container-alert-error{
+    margin-bottom: 15px;
+}
+
+.alert-error{
+    color: red;
+}
+
+/* #############  HOME  ############# */
+
+.container-home {
+    margin-top: 60px;
+}
+
+.container-title-home{
+    margin-top: 20px;
+}
+
+/* #############  RESTAURANT  ############# */
+
+.container {
+
+}
+
+.container-restaurant{
+    margin-top: 50px;
+}
+
+.title-grid{
+    font-size: 16px;
+}
+
+.container-tbody{
+    margin-top: 15px;
+}
+
+.container-cadastrar{
+    position: relative;
+    top: 6px;
+}
+
+.search{
+    position: relative;
+    top: 5px;
+}
+
+/* #############  PLATE  ############# */
+
+.container-plate {
+    margin-top: 50px;
+}
+
+/* #############  RODAPÉ  ############# */
+
+.footer{
+    margin-top: 75px;
+    margin-bottom: 20px;
+}
